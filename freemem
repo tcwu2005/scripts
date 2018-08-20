@@ -1,0 +1,12 @@
+#!/system/bin/sh
+one=`cat /proc//meminfo | grep MemAvailable | awk '{print $2}'`
+sleep 0.5
+two=`cat /proc//meminfo | grep MemAvailable | awk '{print $2}'`
+sleep 0.5
+three=`cat /proc//meminfo | grep MemAvailable | awk '{print $2}'`
+#echo $one
+#echo $two
+#echo $three
+avg=$(((one+two+three)/3))
+echo $avg
+
